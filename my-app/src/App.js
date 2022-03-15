@@ -1,15 +1,21 @@
 import Navbar from "./components/Navbar";
-import Main from "./components/Main";
-import Crypto from './components/Crypto'
+
 import Container from "./components/Layout/Container";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Cryptocurrencies from "./pages/Cryptocurrencies";
+import News from "./pages/News";
 
 function App() {
   return (
-    <div>
+    <div className="bg-slate-100">
       <Navbar />
       <Container>
-        <Main />
-        <Crypto />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+          <Route path="/news" element={<News />} />
+        </Routes>
       </Container>
     </div>
   );
