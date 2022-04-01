@@ -171,12 +171,7 @@ const SingleCryptoDetail = () => {
             })}
           </ul>
         </div>
-        <div className="w-1/2">
-          <h3 className="font-bold text-2xl">{cryptoData.name} Links</h3>
-          {cryptoData.links.map((link) => {
-            return <CryptoLink key={Math.random() * 10} data={link} />;
-          })}
-        </div>
+
         <div>
           <h3 className="text-xl font-semibold text-center">
             Other Statistics
@@ -198,9 +193,15 @@ const SingleCryptoDetail = () => {
             })}
           </ul>
         </div>
+        <div className="w-1/2">
+          <h3 className="font-bold text-2xl">{cryptoData.name} Links</h3>
+          {cryptoData.links.map((link) => {
+            return <CryptoLink key={Math.random() * 10} data={link} />;
+          })}
+        </div>
       </div>
-      <div className="flex justify-between">
-        <div className="crypto-info">
+      <div className="justify-self-start self-start w-2/3">
+        <div className="crypto-info justify-start">
           <h3>What is {cryptoData.name}</h3>
           {parse(cryptoData.description)}
         </div>
