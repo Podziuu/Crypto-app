@@ -1,12 +1,18 @@
 import React from "react";
 import { useGetCryptosQuery } from "../store/apis/cryptoApi";
 import CryptoDetail from "../components/Layout/CryptoDetail";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Cryptocurrencies = () => {
   const { data, isFetching } = useGetCryptosQuery("100");
 
   if (isFetching) {
-    return "Loading...";
+    return (
+      <div className="flex w-full h-screen justify-center items-center flex-col">
+        <ClipLoader className="block" color="black" loading="true" size="150px" />
+        Loading...
+      </div>
+    );
   }
 
   const cryptos = data.data.coins;

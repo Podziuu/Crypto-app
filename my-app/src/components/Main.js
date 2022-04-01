@@ -1,12 +1,18 @@
 import React from "react";
 import { useGetCryptosQuery } from "../store/apis/cryptoApi";
 import millify from "millify";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Main = () => {
-  const { data, isFetching } = useGetCryptosQuery('1');
+  const { data, isFetching } = useGetCryptosQuery("1");
 
   if (isFetching) {
-    return "Loading...";
+    return (
+      <div className="flex w-full h-screen justify-center items-center flex-col">
+        <ClipLoader className="block" color="black" loading="true" size="150px" />
+        Loading...
+      </div>
+    );
   }
 
   const globalStats = data.data.stats;
