@@ -114,10 +114,8 @@ const SingleCryptoDetail = () => {
     },
   ];
 
-  console.log(cryptoData);
-
   return (
-    <div className="flex flex-col justify-center items-center py-4 px-8 pb-8">
+    <div className="flex flex-col justify-center items-center py-4 px-2 md:px-8 pb-8">
       <div className="flex items-center">
         <img className="w-10" src={cryptoData.iconUrl} />
         <h1 className="text-3xl font-semibold">{cryptoData.name}</h1>
@@ -137,9 +135,9 @@ const SingleCryptoDetail = () => {
           </select>
           <h2 className="self-start text-2xl text-[#0071bd] font-bold">{`${cryptoData.name} Price Chart`}</h2>
         </div>
-        <div className="flex font-bold flex-col text-lg">
-          <p>Change: {`${cryptoData.change}%`}</p>
-          <p>{`Current ${cryptoData.name} Price: ${millify(
+        <div className="flex font-bold flex-col text-lg text-end">
+          <p className="text-right">Change: {`${cryptoData.change}%`}</p>
+          <p className="text-right">{`Current ${cryptoData.name} Price: ${millify(
             cryptoData.price
           )}$`}</p>
         </div>
@@ -149,8 +147,8 @@ const SingleCryptoDetail = () => {
         currentPrice={millify(cryptoData.price)}
         coinName={cryptoData.name}
       />
-      <div className="flex justify-between w-full mt-4 items-center">
-        <div className="mr-6">
+      <div className="flex justify-center w-full mt-4 items-center flex-col lg:flex-row">
+        <div className="lg:mr-20">
           <h3 className="text-xl font-semibold text-center">
             {cryptoData.name} Value Statistics
           </h3>
@@ -193,24 +191,18 @@ const SingleCryptoDetail = () => {
             })}
           </ul>
         </div>
-        <div className="w-1/2">
-          <h3 className="font-bold text-2xl">{cryptoData.name} Links</h3>
-          {cryptoData.links.map((link) => {
-            return <CryptoLink key={Math.random() * 10} data={link} />;
-          })}
-        </div>
       </div>
-      <div className="justify-self-start self-start w-2/3">
+      <div className="justify-self-start self-center sm:w-2/3">
         <div className="crypto-info justify-start">
           <h3>What is {cryptoData.name}</h3>
           {parse(cryptoData.description)}
         </div>
-        {/* <div className="w-1/2 ml-8">
+        <div className="">
           <h3 className="font-bold text-2xl">{cryptoData.name} Links</h3>
           {cryptoData.links.map((link) => {
             return <CryptoLink key={Math.random() * 10} data={link} />;
           })}
-        </div> */}
+        </div>
       </div>
     </div>
   );

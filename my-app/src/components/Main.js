@@ -9,7 +9,12 @@ const Main = () => {
   if (isFetching) {
     return (
       <div className="flex w-full h-screen justify-center items-center flex-col">
-        <ClipLoader className="block" color="black" loading="true" size="150px" />
+        <ClipLoader
+          className="block"
+          color="black"
+          loading="true"
+          size="150px"
+        />
         Loading...
       </div>
     );

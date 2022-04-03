@@ -12,15 +12,18 @@ const News = () => {
     count: "12",
   });
 
-  console.log(data);
-
   const { data: cryptoData, isFetching: isCryptoFetching } =
     useGetCryptosQuery("100");
 
   if (isFetching || isCryptoFetching) {
     return (
       <div className="flex w-full h-screen justify-center items-center flex-col">
-        <ClipLoader className="block" color="black" loading="true" size="150px" />
+        <ClipLoader
+          className="block"
+          color="black"
+          loading="true"
+          size="150px"
+        />
         Loading...
       </div>
     );
@@ -46,7 +49,12 @@ const News = () => {
       </select>
       <div className="grid grid-rows-2 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 justify-center place-content-center w-full">
         {news.map((info) => {
-          return <SingleNews key={`${info.datePublished} ${Math.random()}`} data={info} />;
+          return (
+            <SingleNews
+              key={`${info.datePublished} ${Math.random()}`}
+              data={info}
+            />
+          );
         })}
       </div>
     </div>

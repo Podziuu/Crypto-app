@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -15,6 +15,8 @@ const CryptoChart = (props) => {
   const coinHistory = [];
   const timeStamps = [];
 
+  console.log(window.window.innerWidth);
+
   for (let i = props.coinHistory.data.history.length - 1; i > -1; i--) {
     coinHistory.push(props.coinHistory.data.history[i].price);
   }
@@ -26,8 +28,6 @@ const CryptoChart = (props) => {
       ).toLocaleDateString()
     );
   }
-
-  // let i = 0; i < props.coinHistory.data.history.length; i++
 
   ChartJS.register(
     CategoryScale,
@@ -99,6 +99,7 @@ const CryptoChart = (props) => {
       },
     },
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -108,8 +109,8 @@ const CryptoChart = (props) => {
   };
 
   return (
-    <div className="w-full">
-      <Line data={data} options={options} />
+    <div className="w-full h-[400px] sm:h-[500px] md:h-[600px]">
+      <Line className="h-full" data={data} options={options} />
     </div>
   );
 };

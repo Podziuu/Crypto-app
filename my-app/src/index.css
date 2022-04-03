@@ -5,6 +5,8 @@
 .crypto-info h3 {
     font-weight: bold;
     font-size: x-large;
+    text-align: center;
+    margin: 1rem 0;
 }
 
 .crypto-info a {
@@ -15,4 +17,5 @@
 
 .crypto-info p {
     margin: .5rem 0;
+    text-align: center;
 }

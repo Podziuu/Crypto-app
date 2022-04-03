@@ -10,7 +10,12 @@ const Crypto = () => {
   if (isFetching) {
     return (
       <div className="flex w-full h-screen justify-center items-center flex-col">
-        <ClipLoader className="block" color="black" loading="true" size="150px" />
+        <ClipLoader
+          className="block"
+          color="black"
+          loading="true"
+          size="150px"
+        />
         Loading...
       </div>
     );
@@ -31,7 +36,7 @@ const Crypto = () => {
           Show More
         </Link>
       </div>
-      <div className="grid grid-rows-3 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 ">
+      <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-5">
         {cryptos.map((crypto) => {
           return <CryptoDetail key={crypto.uuid} crypto={crypto} />;
         })}
