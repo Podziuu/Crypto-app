@@ -45,7 +45,7 @@ const Cryptocurrencies = () => {
         ref={inputRef}
         onChange={changeHandler}
       />
-      <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 gap-x-5 py-5 w-4/5 sm:w-full px-4">
+      <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 gap-x-5 py-5 sm:w-full px-4">
         {filteredCrypto === null &&
           cryptos.map((crypto) => {
             return <CryptoDetail key={crypto.uuid} crypto={crypto} />;
