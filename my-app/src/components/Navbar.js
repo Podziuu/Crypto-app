@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="fixed sm:h-screen bg-blue-500 m-0 w-full sm:w-fit sm:block z-50 flex items-center justify-between p-6 sm:p-0">
-        <a className="flex justify-start sm:justify-center items-center sm:p-6 text-white font-bold text-xl z-50">
+        <a href="/" className="flex justify-start sm:justify-center items-center sm:p-6 text-white font-bold text-xl z-50">
           <img
             className="w-12 mr-4 z-50"
             src="https://github.com/adrianhajdin/project_cryptoverse/blob/main/src/images/cryptocurrency.png?raw=true"
@@ -46,7 +46,7 @@ const Navbar = () => {
           onClick={clickHandler}
           size={25}
           color="white"
-          className="cursor-pointer z-50"
+          className="cursor-pointer z-50 block sm:hidden"
         />
       </nav>
       {showNav && (
