@@ -26,11 +26,15 @@ const Cryptocurrencies = () => {
 
   const changeHandler = (e) => {
     const currentValue = inputRef.current.value;
-    console.log(currentValue);
     const filteredCryptos = cryptos.filter((crypto) => {
       return crypto.name.toLowerCase().startsWith(currentValue.toLowerCase());
     });
     setFilteredCrypto(filteredCryptos);
+
+    if(currentValue.length === 0) {
+      console.log('siema')
+      setFilteredCrypto(null)
+    }
   };
 
   return (
@@ -41,7 +45,7 @@ const Cryptocurrencies = () => {
         ref={inputRef}
         onChange={changeHandler}
       />
-      <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-x-5 py-5 w-4/5 sm:w-full">
+      <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 gap-x-5 py-5 w-4/5 sm:w-full px-4">
         {filteredCrypto === null &&
           cryptos.map((crypto) => {
             return <CryptoDetail key={crypto.uuid} crypto={crypto} />;
@@ -51,7 +55,7 @@ const Cryptocurrencies = () => {
             return <CryptoDetail key={crypto.uuid} crypto={crypto} />;
           })}
       </div>
-      {(filteredCrypto === null || filteredCrypto.length === 0) && (
+      {(filteredCrypto !== null || filteredCrypto?.length === 0) && (
         <h2 className="text-2xl text-center">No Cryptocurrency Found</h2>
       )}
     </div>

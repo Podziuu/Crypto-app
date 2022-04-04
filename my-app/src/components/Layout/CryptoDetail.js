@@ -6,7 +6,7 @@ const CryptoDetail = (props) => {
   const data = props.crypto;
 
   return (
-    <Link to={`/cryptocurrencies/${data.uuid}`} className="border mx-4 bg-white cursor-pointer hover:shadow-slate-300 hover:shadow-lg hover:-translate-y-1 transition-transform">
+    <Link to={`/cryptocurrencies/${data.uuid}`} className="border bg-white cursor-pointer hover:shadow-slate-300 hover:shadow-lg hover:-translate-y-1 transition-transform">
       <div className="flex items-center justify-between border-b p-6">
         <h3 className="font-semibold">
           {data.rank}.{data.name}

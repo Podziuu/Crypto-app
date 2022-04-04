@@ -47,7 +47,7 @@ const News = () => {
           return <option key={singleCrypto.uuid}>{singleCrypto.name}</option>;
         })}
       </select>
-      <div className="grid grid-rows-2 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 justify-center place-content-center w-full">
+      <div className="grid grid-rows-2 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 justify-center place-content-center w-full px-4">
         {news.map((info) => {
           return (
             <SingleNews
